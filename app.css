@@ -1,0 +1,130 @@
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.pokemonList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.pokemonFlex {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    border-radius: 15px;
+    padding: 1rem 1rem 1.5rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin-bottom: 3rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+}
+
+.pokemonImage {
+    width: 15rem;
+    filter: drop-shadow(5px 7px 4px #686868);
+}
+
+.pokemonNumber {
+    font-weight: 00;
+    margin: 0px;
+    color: #808080;
+}
+
+.pokemonName {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0rem;
+}
+
+.pokemonType {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.pill {
+    border-radius: 15px;
+    padding: 0.3rem 1.5rem;
+    margin: 3px;
+}
+
+.background-color-grass {
+    background-color: #9bcc50;
+}
+
+.background-color-poison {
+    background-color: #b97fc9;
+    color: white;
+}
+
+.background-color-fire {
+    background-color: #fd7d24;
+    color: white;
+}
+
+.background-color-flying {
+    background: linear-gradient(to bottom, #3dc7ef 50%, #bdb9b8 50% 100%);
+}
+
+.background-color-water {
+    background-color: #4592c4;
+    color: white;
+}
+
+.background-color-bug {
+    background-color: #729f3f;
+    color: white;
+}
+
+.background-color-normal {
+    background-color: #a4acaf;
+    color: white;
+}
+
+table {
+    margin-top: 0.3rem;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-collapse: separate;
+    border-spacing: 0 50px;
+}
+
+table.baseStatsTable tbody tr td {
+    padding: 0.3rem 1rem;
+}
+
+.dex-pokemon-stats-bar-container {
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    border: 1px solid #CDCDCD;
+}
+
+.dex-pokemon-stats-bar {
+    color: #808080;
+    font-size: 1rem;
+    text-indent: 85px;
+    font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
+    border-right: 1px solid #CDCDCD;
+}
+
+td.fuckoff:nth-of-type(1n) {
+    background-color: #006f3c;
+    border-radius: 15px 0px 0px 15px;
+}
+
+td.fuck:nth-of-type(2n) {
+    background-color: #f9a73e;
+    border-radius: 0px;
+}
+
+td.fuck:nth-of-type(3n) {
+    background-color: #264b96;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.navbar {
+    margin-bottom: 2rem;
+}
