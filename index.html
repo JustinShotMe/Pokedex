@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="icon" href="imgs/pokeball.png">
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body style="background-color:#f0f0f0">
+
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style=" background-color: #ee1515">
+        <a href="#" class="navbar-brand">Professor Oak's Pokédex</a>
+        <ul class="navbar-nav mr-auto">
+            <li><img class="d-none d-sm-block d-md-none" height="40" id="eye" src="imgs/pokeball.png"></li>
+        </ul>
+        <button class="navbar-toggler">
+            <span class="navbar-toggler-icon" data-toggle="collapse" data-target="#expandme"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="expandme">
+            <div class="navbar-nav">
+                <a href="Home" class="nav-item nav-link">Pokédex</a>
+                <a href="Home" class="nav-item nav-link">Pokémon</a>
+                <a href="Home" class="nav-item nav-link">Items</a>
+                <a href="Home" class="nav-item nav-link">Ash</a>
+                <a href="Home" class="nav-item nav-link">Save</a>
+            </div>
+            <ul class="navbar-nav ml-auto">
+                <li><img class="me-auto d-none d-md-block" height="40" id="eye" src="imgs/pokeball.png"></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="pokemonList">
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Bulbasaur</p>
+            <p class="pokemonNumber">001</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-grass">Grass</p>
+                <p class="pill background-color-poison">Poison</p>
+            </span>
+            <!-- <table class="baseStatsHealth" style="width: 100%;">
+                <tbody>
+                    <tr class="healthPoints">
+                        <td style="width: 10%">HP</td>
+                        <td style="width:78%;">
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 84.2%; background-color: #006f3c; border-radius: 15px 0px 0px 15px;">
+                                    45</div>
+                            </div>
+                        </td>
+                        <td style="width12%">&#160;</td>
+                    </tr>
+                    <tr class="attackPoints">
+                        <td style="width: 10%">ATK</td>
+                        <td style=" width:78%;">
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 85%; background-color: #f9a73e; border-radius: 15px 0px 0px 15px;">
+                                    49</div>
+                            </div>
+                        </td>
+                        <td style="width:12%">&#160;</td>
+                    </tr>
+                    <tr class="defensePoints">
+                        <td style="width:10%">DEF</td>
+                        <td style=" width:78%;">
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 79.9%; background-color: #264b96; border-radius: 15px 0px 0px 15px;">
+                                    49</div>
+                            </div>
+                        </td>
+                        <td style="width:12%">&#160;</td>
+                    </tr>
+            </table> -->
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Ivysaur</p>
+            <p class="pokemonNumber">002</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/002.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-grass">Grass</p>
+                <p class="pill background-color-poison">Poison</p>
+            </span>
+            <!-- <table class="baseStatsHealth" style="width: 100%;">
+                <tbody>
+                    <tr class="healthPoints">
+                        <td>
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 61.5%; background-color: #006f3c; border-radius: 15px 0px 0px 15px;">
+                                    HP: &#160;60</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="attackPoints">
+                        <td>
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 67.5%; background-color: #f9a73e; border-radius: 15px 0px 0px 15px;">
+                                    ATK: 62</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="defensePoints">
+                        <td>
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 60%; background-color: #264b96; border-radius: 15px 0px 0px 15px;">
+                                    DEF: 63</div>
+                            </div>
+                        </td>
+                    </tr>
+            </table> -->
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Venasaur</p>
+            <p class="pokemonNumber">003</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/003.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-grass">Grass</p>
+                <p class="pill background-color-poison">Poison</p>
+            </span>
+            <!-- <table class="baseStatsHealth" style="width: 100%;">
+                <tbody>
+                    <tr class="healthPoints">
+                        <td>
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 25.9%; background-color: #006f3c; border-radius: 15px 0px 0px 15px;">
+                                    HP: &#160;80</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="attackPoints">
+                        <td>
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 42.7%; background-color: #f9a73e; border-radius: 15px 0px 0px 15px;">
+                                    ATK: 82</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="defensePoints">
+                        <td>
+                            <div class="dex-pokemon-stats-bar-container">
+                                <div class="dex-pokemon-stats-bar"
+                                    style="margin-right: 33.6%; background-color: #264b96; border-radius: 15px 0px 0px 15px;">
+                                    DEF: 83</div>
+                            </div>
+                        </td>
+                    </tr>
+            </table> -->
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Charmander</p>
+            <p class="pokemonNumber">004</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-fire">Fire</p>
+            </span>
+            <!-- <table class="baseStatsTable">
+                <tbody>
+                    <tr>
+                        <td class="fuckoff" style="width:29%">HP</td>
+                        <td style="width:39%">ATK</td>
+                        <td style="width:32%">DEF</td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Charmeleon</p>
+            <p class="pokemonNumber">005</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/005.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-fire">Fire</p>
+            </span>
+            <!-- <table class="baseStatsTable">
+                <tbody>
+                    <tr>
+                        <td class="fuckoff" style="width:32%">HP</td>
+                        <td style="width:36%">ATK</td>
+                        <td style="width:32%">DEF</td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Charzard</p>
+            <p class="pokemonNumber">006</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-fire">Fire</p>
+                <p class="pill background-color-flying">Flying</p>
+            </span>
+            <!-- <table class="baseStatsTable">
+                <tbody>
+                    <tr>
+                        <td class="fuckoff" style="width:33%">HP</td>
+                        <td style="width:35%">ATK</td>
+                        <td style="width:33%">DEF</td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Squirtle</p>
+            <p class="pokemonNumber">007</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-water">Water</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Wartortle</p>
+            <p class="pokemonNumber">008</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-water">Water</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Blastoise</p>
+            <p class="pokemonNumber">009</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-water">Water</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Caterpie</p>
+            <p class="pokemonNumber">010</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-bug">Bug</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Metapod</p>
+            <p class="pokemonNumber">011</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/011.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-bug">Bug</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Butterfree</p>
+            <p class="pokemonNumber">012</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-bug">Bug</p>
+                <p class="pill background-color-flying">Flying</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Weedle</p>
+            <p class="pokemonNumber">013</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/013.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-bug">Bug</p>
+                <p class="pill background-color-poison">Poison</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Kakuna</p>
+            <p class="pokemonNumber">014</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/014.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-bug">Bug</p>
+                <p class="pill background-color-poison">Poison</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Beedrill</p>
+            <p class="pokemonNumber">015</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/015.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-bug">Bug</p>
+                <p class="pill background-color-poison">Poison</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Pidgey</p>
+            <p class="pokemonNumber">016</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-normal">Normal</p>
+                <p class="pill background-color-flying">Flying</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Pidgeotto</p>
+            <p class="pokemonNumber">017</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/017.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-normal">Normal</p>
+                <p class="pill background-color-flying">Flying</p>
+            </span>
+        </span>
+
+        <span class="pokemonFlex">
+            <p class="pokemonName">Pidgeot</p>
+            <p class="pokemonNumber">018</p>
+            <img class="pokemonImage" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/018.png" alt="">
+            <span class="pokemonType">
+                <p class="pill background-color-normal">Normal</p>
+                <p class="pill background-color-flying">Flying</p>
+            </span>
+        </span>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
