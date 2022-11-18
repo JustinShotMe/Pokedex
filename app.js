@@ -1,3 +1,5 @@
+// https://github.com/Tatohead/Console-Iconset/tree/main/Console
+
 function loopPokemon(z, y) {
     for (let x = z; x <= y; x++) {
 
@@ -17,6 +19,12 @@ function loopPokemon(z, y) {
                 pokemonName.setAttribute('class', 'pokemonName')
                 var mildName = pokeData.name
                 var pokeName = mildName.split('-', 1)
+                // attempting to change the naming function so that some pokemon's hyphen name can stay
+                // if (mildName.textContent.includes('Tapu')) {
+                //     var pokeName = mildName.split('-', 1)
+                // } else {
+                //     var pokeName = mildName
+                // }
                 pokemonName.innerHTML = pokeName
                 pokeSpan.appendChild(pokemonName)
 
@@ -38,6 +46,8 @@ function loopPokemon(z, y) {
                     pokemonImage.setAttribute('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${x}.png`)
                 }
                 pokeSpan.appendChild(pokemonNumber)
+                // var pokemonNumber = document.create 'pokeCircle')
+                // pokeSpan.appendChild(pokeCircle)
                 pokeSpan.appendChild(pokemonImage)
 
                 // create span container to hold the pokemonTypes
@@ -52,79 +62,166 @@ function loopPokemon(z, y) {
                     pokemonType.appendChild(typeP)
                 }
 
-                // create the pokemon's consoles' span
+                // 
+                // 
+                // console.log(pokemonType.firstChild.innerHTML)
+                pokeSpan.addEventListener("mouseenter", (event) => {
+                    // highlight the mouseenter target
+                    if (pokemonType.firstChild.innerHTML == 'grass') {
+                        event.target.style["boxShadow"] = "#9bcc50 0px 19px 38px, #9bcc50 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'poison') {
+                        event.target.style["boxShadow"] = "#b97fc9 0px 19px 38px, #b97fc9 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'fire') {
+                        event.target.style["boxShadow"] = "#fd7d24 0px 19px 38px, #fd7d24 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'water') {
+                        event.target.style["boxShadow"] = "#4592c4 0px 19px 38px, #4592c4 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'bug') {
+                        event.target.style["boxShadow"] = "#729f3f 0px 19px 38px, #729f3f 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'normal') {
+                        event.target.style["boxShadow"] = "#a4acaf 0px 19px 38px, #a4acaf 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'rock') {
+                        event.target.style["boxShadow"] = "#ab9842 0px 19px 38px, #ab9842 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'flying') {
+                        event.target.style["boxShadow"] = "#3dc7ef 0px 19px 38px, #3dc7ef 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'ground') {
+                        event.target.style["boxShadow"] = "#ab9842 0px 19px 38px, #f7de3f 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'psychic') {
+                        event.target.style["boxShadow"] = "#f366b9 0px 19px 38px, #f366b9 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'electric') {
+                        event.target.style["boxShadow"] = "#eed535 0px 19px 38px, #eed535 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'ice') {
+                        event.target.style["boxShadow"] = "#51c4e7 0px 19px 38px, #51c4e7 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'ghost') {
+                        event.target.style["boxShadow"] = "#7b62a3 0px 19px 38px, #7b62a3 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'fighting') {
+                        event.target.style["boxShadow"] = "#d56723 0px 19px 38px, #d56723 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'fairy') {
+                        event.target.style["boxShadow"] = "#fdb9e9 0px 19px 38px, #fdb9e9 0px 15px 12px";
+                    } if (pokemonType.firstChild.innerHTML == 'dragon') {
+                        // event.target.style["boxShadow"] = "#f16e57 0px 19px 38px, #f16e57 0px 15px 12px";
+                        // event.target.style["boxShadow"] = "#f16e57 0px 19px 38px, #53a4cf 0px -15px 10px";
+                        event.target.style["boxShadow"] = "0 19px 12px 0.2em #f16e57, 0 15px 20px 0.8em #53a4cf";
+                    } if (pokemonType.firstChild.innerHTML == 'dark') {
+                        event.target.style["boxShadow"] = "#707070 0px 19px 38px, #707070 0px 15px 12px";
+                    }
+                }, false);
+                // reset the box
+                pokeSpan.addEventListener("mouseleave", (event) => {
+                    event.target.style["boxShadow"] = "";
+                }, false);
+
+
+                // // create the pokemon's consoles' span
                 var pokemonConsoles = document.createElement('span')
                 pokemonConsoles.setAttribute('class', 'pokemonConsoles', 'id', 'pokemonConsoles')
-                let gameArray = []
 
-                for (x of pokeData.game_indices) {
-                    gameArray.push(x.version.name)
-                }
+                var consoleImage = document.createElement('img')
+                consoleImage.setAttribute('class', 'pokemonConsoleImage')
 
-                if (gameArray.includes('red' || 'yellow' || 'blue')) {
-                    var consoleImage = document.createElement('img')
-                    consoleImage.setAttribute('class', 'pokemonConsoleImage')
+                // Apply Gameboy to Gen 1
+                if (pokemonNumber.innerHTML <= 151) {
                     consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gb.png')
-                    pokemonConsoles.appendChild(consoleImage)
-                }
-                if (gameArray.includes('gold' || 'silver' || 'crystal')) {
-                    var consoleImage = document.createElement('img')
-                    consoleImage.setAttribute('class', 'pokemonConsoleImage')
+                } // apply GBC to Gen 2 
+                else if (pokemonNumber.innerHTML >= 152 && pokemonNumber.innerHTML <= 251) {
                     consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gbc9.png')
-                    pokemonConsoles.appendChild(consoleImage)
-                }
-                if (gameArray.includes('ruby' || 'sapphire' || 'platinum' || 'heartgold' || 'soulsilver' || 'black' || 'white' || 'black-2' || 'white-2')) {
-                    var consoleImage = document.createElement('img')
-                    consoleImage.setAttribute('class', 'pokemonConsoleImage')
+                } // apply GBA to Gen 3
+                else if (pokemonNumber.innerHTML >= 252 && pokemonNumber.innerHTML <= 386) {
+                    consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GBA/Gameboy%20Sp4.png')
+                } // apply DS to Gen 4 & 5
+                else if (pokemonNumber.innerHTML >= 387 && pokemonNumber.innerHTML <= 649) {
                     consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/NDS/NDS2.png')
-                    pokemonConsoles.appendChild(consoleImage)
+                } // apply 3DS to Gen 6
+                else if (pokemonNumber.innerHTML >= 650 && pokemonNumber.innerHTML <= 721) {
+                    consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png')
+                } // apply 3DS & Switch to Gen 7 
+                else if (pokemonNumber.innerHTML >= 722 && pokemonNumber.innerHTML <= 809) {
+                    consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png')
+
+                    var consoleImage2 = document.createElement('img')
+                    consoleImage2.setAttribute('class', 'pokemonConsoleImage')
+                    consoleImage2.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png')
+                } // apply switch to Gen 8
+                else if (pokemonNumber.innerHTML >= 810 && pokemonNumber.innerHTML <= 905) {
+                    consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png')
                 }
+
                 pokeSpan.appendChild(pokemonType)
+                pokemonConsoles.appendChild(consoleImage)
+                // only apply second image if it exists
+                if (consoleImage2) { pokemonConsoles.appendChild(consoleImage2) }
                 pokeSpan.appendChild(pokemonConsoles)
             })
     }
 
 }
 
-function addRegion(y) {
-    let sunMoon = []
-    fetch(`https://pokeapi.co/api/v2/generation/${y}/`)
-        .then(res => res.json())
-        .then(sunMoonData => {
-            for (x in sunMoonData.pokemon_species) {
-                sunMoon.push(sunMoonData.pokemon_species[x].name)
-            }
+// function developGenerationList(x, y) {
+//     for (x = 1; x <= y; x++) {
+//         let generationList = [];
+//         fetch(`https://pokeapi.co/api/v2/generation/${y}/`)
+//             .then(res => res.json())
+//             .then(sunMoonData => {
+//                 // build an array of each pokemon in the pokemon_species in a generation
+//                 for (z in sunMoonData.pokemon_species) {
+//                     generationList.push(sunMoonData.pokemon_species[z].name)
+//                 }
+//             })
+//         console.log(`Generation ${x}: ${generationList}`)
+//     }
+// }
 
-            // console.log(sunMoon)
-            // iterate through the pokeFlexs displayed{
-            for (x = 1; x <= 905; x++) {
-                // check if the iterated pokemon's name exists in the sunMoon array
-                if (sunMoon.includes(pokemonList.childNodes[x].childNodes[0].innerHTML)) {
-                    // console.log(x)
-                    // console.log(pokemonList.childNodes[x].childNodes[0].innerHTML)
+// function addRegion(y) {
+//     let sunMoon = []
+//     fetch(`https://pokeapi.co/api/v2/generation/${y}/`)
+//         .then(res => res.json())
+//         .then(sunMoonData => {
+//             // build an array of each pokemon in the pokemon_species in a generation
+//             for (z in sunMoonData.pokemon_species) {
+//                 sunMoon.push(sunMoonData.pokemon_species[z].name)
+//             }
 
-                    // add the 3DS to PokemonConsoles Span
-                    var addedImage = document.createElement('img')
-                    if (y <= 5) {
-                        addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/NDS/NDS2.png', 'class', 'pokemonConsoleImage')
-                        pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-                    } else if (y > 5 && y < 8) {
-                        addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png', 'class', 'pokemonConsoleImage')
-                        pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-                    } else if (y = 8) {
-                        addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png', 'class', 'pokemonConsoleImage')
-                        pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-                    }
-                }
-            }
-        })
-}
+//             // iterate through the pokeFlexs displayed{
+//             for (x = 1; x <= 905; x++) {
+//                 // check if the iterated pokemon's name exists in the sunMoon array
+//                 if (sunMoon.includes(pokemonList.childNodes[x].childNodes[0].innerHTML)) {
+//                     // console.log(`Generation ${y}: ${pokemonList.childNodes[x].childNodes[0].innerHTML}`)
 
-function loopRegions() {
-    for (x = 4; x <= 8; x++) {
-        addRegion(x)
-    }
-}
+//                     // add the 3DS to PokemonConsoles Span
+//                     var addedImage = document.createElement('img')
+//                     if (y == 1) {
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gb.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                     } else if (y == 2) {
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gbc9.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                     } else if (y == 3) {
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GBA/Gameboy%20Sp4.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                     } else if (y == 4 || y == 5) {
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/NDS/NDS2.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                     } else if (y == 6) {
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                     } else if (y == 7) {
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                     } else if (y == 8) {
+//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png', 'class', 'pokemonConsoleImage')
+//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
+//                     }
+//                 }
+//             }
+//         })
+// }
+
+// function loopRegions() {
+//     for (x = 1; x <= 8; x++) {
+//         addRegion(x)
+//     }
+// }
 
 // // printing an image practice
 // function deliverImage(i) {

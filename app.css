@@ -19,15 +19,24 @@ p {
     align-items: center;
     border-radius: 15px;
     padding: 1rem 1rem 1.5rem 1rem;
+    transition: ease-in-out 0.3s;
+    /* box-shadow: rgba(218, 165, 32) 0px 0px 38px; */
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     margin-bottom: 3rem;
     margin-left: 0.7rem;
     margin-right: 0.7rem;
 }
 
+.pokemonFlex:hover {
+    transition: ease-in-out 0.3s;
+    /* box-shadow: rgba(218, 165, 32) 0px 0px 38px; */
+    transform: scale(1.05);
+}
+
 .pokemonImage {
     width: 12rem;
     filter: drop-shadow(5px 7px 4px #686868);
+    /* filter: drop-shadow(2px 3px 2px #fff) drop-shadow(4px 6px 4px #686868); */
 }
 
 .pokemonNumber {
@@ -52,9 +61,15 @@ p {
     border-radius: 15px;
     padding: 0.2rem 1rem;
     margin: 3px;
+    /* border: 1px #686868 solid; */
+}
+
+span:has(.background-color-grass) {
+    /* background-color: #9bcc50; */
 }
 
 .background-color-grass {
+
     background-color: #9bcc50;
     color: white;
 }
