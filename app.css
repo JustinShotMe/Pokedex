@@ -64,9 +64,9 @@ p {
     /* border: 1px #686868 solid; */
 }
 
-span:has(.background-color-grass) {
-    /* background-color: #9bcc50; */
-}
+/* span:has(.background-color-grass) {
+    background-color: #9bcc50;
+} */
 
 .background-color-grass {
 
@@ -173,9 +173,12 @@ span:has(.background-color-grass) {
 }
 
 @media screen and (max-height:400px) {
+    .pokemonFlex {
+        min-width: 173px;
+    }
+
     .pokemonImage {
-        /* max-width: 8rem; */
-        max-width: 2rem;
+        max-width: 8rem;
     }
 
     .pokemonName {
@@ -188,7 +191,7 @@ span:has(.background-color-grass) {
 
     .pokemonType {
         display: flex;
-        flex-flow: column;
+        flex-flow: row;
         justify-content: center;
     }
 
@@ -197,6 +200,6 @@ span:has(.background-color-grass) {
     }
 
     .pokemonConsoleImage {
-        max-width: 1.2rem;
+        max-width: 1.5rem;
     }
 }
