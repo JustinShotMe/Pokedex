@@ -34,7 +34,7 @@ function loopPokemon(z, y) {
                 // create img for pokeomon image
                 var pokemonImage = document.createElement('img')
                 pokemonImage.setAttribute('class', 'pokemonImage')
-                // logic to make sure there are the right amount of zeros
+                // logic to make sure there are the right amount of zeros for the image url
                 if (pokeData.id <= 9) {
                     pokemonNumber.innerHTML = String('00').concat(pokeData.id);
                     pokemonImage.setAttribute('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/00${x}.png`)
@@ -62,53 +62,53 @@ function loopPokemon(z, y) {
                     pokemonType.appendChild(typeP)
                 }
 
-                // 
-                // 
+                //  determine the first child inner HTML, then make the box shadow
+                // a color corresponding to the pokemon's first color
                 // console.log(pokemonType.firstChild.innerHTML)
-                pokeSpan.addEventListener("mouseenter", (event) => {
-                    // highlight the mouseenter target
-                    if (pokemonType.firstChild.innerHTML == 'grass') {
-                        event.target.style["boxShadow"] = "#9bcc50 0px 19px 38px, #9bcc50 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'poison') {
-                        event.target.style["boxShadow"] = "#b97fc9 0px 19px 38px, #b97fc9 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'fire') {
-                        event.target.style["boxShadow"] = "#fd7d24 0px 19px 38px, #fd7d24 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'water') {
-                        event.target.style["boxShadow"] = "#4592c4 0px 19px 38px, #4592c4 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'bug') {
-                        event.target.style["boxShadow"] = "#729f3f 0px 19px 38px, #729f3f 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'normal') {
-                        event.target.style["boxShadow"] = "#a4acaf 0px 19px 38px, #a4acaf 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'rock') {
-                        event.target.style["boxShadow"] = "#ab9842 0px 19px 38px, #ab9842 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'flying') {
-                        event.target.style["boxShadow"] = "#3dc7ef 0px 19px 38px, #3dc7ef 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'ground') {
-                        event.target.style["boxShadow"] = "#ab9842 0px 19px 38px, #f7de3f 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'psychic') {
-                        event.target.style["boxShadow"] = "#f366b9 0px 19px 38px, #f366b9 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'electric') {
-                        event.target.style["boxShadow"] = "#eed535 0px 19px 38px, #eed535 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'ice') {
-                        event.target.style["boxShadow"] = "#51c4e7 0px 19px 38px, #51c4e7 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'ghost') {
-                        event.target.style["boxShadow"] = "#7b62a3 0px 19px 38px, #7b62a3 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'fighting') {
-                        event.target.style["boxShadow"] = "#d56723 0px 19px 38px, #d56723 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'fairy') {
-                        event.target.style["boxShadow"] = "#fdb9e9 0px 19px 38px, #fdb9e9 0px 15px 12px";
-                    } if (pokemonType.firstChild.innerHTML == 'dragon') {
-                        // event.target.style["boxShadow"] = "#f16e57 0px 19px 38px, #f16e57 0px 15px 12px";
-                        // event.target.style["boxShadow"] = "#f16e57 0px 19px 38px, #53a4cf 0px -15px 10px";
-                        event.target.style["boxShadow"] = "0 19px 12px 0.2em #f16e57, 0 15px 20px 0.8em #53a4cf";
-                    } if (pokemonType.firstChild.innerHTML == 'dark') {
-                        event.target.style["boxShadow"] = "#707070 0px 19px 38px, #707070 0px 15px 12px";
-                    }
-                }, false);
-                // reset the box
-                pokeSpan.addEventListener("mouseleave", (event) => {
-                    event.target.style["boxShadow"] = "";
-                }, false);
+                // pokeSpan.addEventListener("mouseenter", (event) => {
+                //     // highlight the mouseenter target
+                //     if (pokemonType.firstChild.innerHTML == 'grass') {
+                //         event.target.style["boxShadow"] = "#9bcc50 0px 19px 38px, #9bcc50 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'poison') {
+                //         event.target.style["boxShadow"] = "#b97fc9 0px 19px 38px, #b97fc9 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'fire') {
+                //         event.target.style["boxShadow"] = "#fd7d24 0px 19px 38px, #fd7d24 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'water') {
+                //         event.target.style["boxShadow"] = "#4592c4 0px 19px 38px, #4592c4 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'bug') {
+                //         event.target.style["boxShadow"] = "#729f3f 0px 19px 38px, #729f3f 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'normal') {
+                //         event.target.style["boxShadow"] = "#a4acaf 0px 19px 38px, #a4acaf 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'rock') {
+                //         event.target.style["boxShadow"] = "#ab9842 0px 19px 38px, #ab9842 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'flying') {
+                //         event.target.style["boxShadow"] = "#3dc7ef 0px 19px 38px, #3dc7ef 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'ground') {
+                //         event.target.style["boxShadow"] = "#ab9842 0px 19px 38px, #f7de3f 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'psychic') {
+                //         event.target.style["boxShadow"] = "#f366b9 0px 19px 38px, #f366b9 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'electric') {
+                //         event.target.style["boxShadow"] = "#eed535 0px 19px 38px, #eed535 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'ice') {
+                //         event.target.style["boxShadow"] = "#51c4e7 0px 19px 38px, #51c4e7 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'ghost') {
+                //         event.target.style["boxShadow"] = "#7b62a3 0px 19px 38px, #7b62a3 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'fighting') {
+                //         event.target.style["boxShadow"] = "#d56723 0px 19px 38px, #d56723 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'fairy') {
+                //         event.target.style["boxShadow"] = "#fdb9e9 0px 19px 38px, #fdb9e9 0px 15px 12px";
+                //     } if (pokemonType.firstChild.innerHTML == 'dragon') {
+                //         // event.target.style["boxShadow"] = "#f16e57 0px 19px 38px, #f16e57 0px 15px 12px";
+                //         // event.target.style["boxShadow"] = "#f16e57 0px 19px 38px, #53a4cf 0px -15px 10px";
+                //         event.target.style["boxShadow"] = "0 19px 12px 0.2em #f16e57, 0 15px 20px 0.8em #53a4cf";
+                //     } if (pokemonType.firstChild.innerHTML == 'dark') {
+                //         event.target.style["boxShadow"] = "#707070 0px 19px 38px, #707070 0px 15px 12px";
+                //     }
+                // }, false);
+                // // reset the box
+                // pokeSpan.addEventListener("mouseleave", (event) => {
+                //     event.target.style["boxShadow"] = "";
+                // }, false);
 
 
                 // // create the pokemon's consoles' span
@@ -154,93 +154,3 @@ function loopPokemon(z, y) {
     }
 
 }
-
-// function developGenerationList(x, y) {
-//     for (x = 1; x <= y; x++) {
-//         let generationList = [];
-//         fetch(`https://pokeapi.co/api/v2/generation/${y}/`)
-//             .then(res => res.json())
-//             .then(sunMoonData => {
-//                 // build an array of each pokemon in the pokemon_species in a generation
-//                 for (z in sunMoonData.pokemon_species) {
-//                     generationList.push(sunMoonData.pokemon_species[z].name)
-//                 }
-//             })
-//         console.log(`Generation ${x}: ${generationList}`)
-//     }
-// }
-
-// function addRegion(y) {
-//     let sunMoon = []
-//     fetch(`https://pokeapi.co/api/v2/generation/${y}/`)
-//         .then(res => res.json())
-//         .then(sunMoonData => {
-//             // build an array of each pokemon in the pokemon_species in a generation
-//             for (z in sunMoonData.pokemon_species) {
-//                 sunMoon.push(sunMoonData.pokemon_species[z].name)
-//             }
-
-//             // iterate through the pokeFlexs displayed{
-//             for (x = 1; x <= 905; x++) {
-//                 // check if the iterated pokemon's name exists in the sunMoon array
-//                 if (sunMoon.includes(pokemonList.childNodes[x].childNodes[0].innerHTML)) {
-//                     // console.log(`Generation ${y}: ${pokemonList.childNodes[x].childNodes[0].innerHTML}`)
-
-//                     // add the 3DS to PokemonConsoles Span
-//                     var addedImage = document.createElement('img')
-//                     if (y == 1) {
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gb.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                     } else if (y == 2) {
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gbc9.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                     } else if (y == 3) {
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GBA/Gameboy%20Sp4.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                     } else if (y == 4 || y == 5) {
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/NDS/NDS2.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                     } else if (y == 6) {
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                     } else if (y == 7) {
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                     } else if (y == 8) {
-//                         addedImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png', 'class', 'pokemonConsoleImage')
-//                         pokemonList.childNodes[x].childNodes[4].appendChild(addedImage)
-//                     }
-//                 }
-//             }
-//         })
-// }
-
-// function loopRegions() {
-//     for (x = 1; x <= 8; x++) {
-//         addRegion(x)
-//     }
-// }
-
-// // printing an image practice
-// function deliverImage(i) {
-//     if (i <= 9) {
-//         document.write(`<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/00${i}.png" style="">`);
-//     } else if (i >= 10 && i <= 99) {
-//         document.write(`<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/0${i}.png" style = "">`);
-//     } else if (i >= 100) {
-//         document.write(`<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${i}.png" style = "">`);
-//     }
-// }
-
-// // printing a number logic practice
-// function printNumber(i) {
-//     if (i <= 9) {
-//         document.write(`Pokemon: 00${i}`);
-//     } else if (i >= 10 && i <= 99) {
-//         document.write(`Pokemon: 0${i}`);
-//     } else if (i >= 100) {
-//         document.write(`Pokemon: ${i}`);
-//     }
-// }

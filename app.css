@@ -61,16 +61,17 @@ p {
     border-radius: 15px;
     padding: 0.2rem 1rem;
     margin: 3px;
-    /* border: 1px #686868 solid; */
+    border: 1px #68686850 solid;
+    filter: drop-shadow(1.5px 3px 0.2rem rgba(0, 0, 0, 0.756));
 }
 
-/* span:has(.background-color-grass) {
-    background-color: #9bcc50;
-} */
+span.pokemonFlex:has(:first-of-type.background-color-grass) {
+    background: linear-gradient(to bottom, white 25%, #9acc50bb);
+    background-color: #9acc50bb;
+}
 
 .background-color-grass {
-
-    background-color: #9bcc50;
+    background-color: #9acc50;
     color: white;
 }
 
@@ -79,13 +80,27 @@ p {
     color: white;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-poison) {
+    background: linear-gradient(to bottom, white 25%, #b97fc9bb);
+    background-color: #b97fc9bb;
+}
+
 .background-color-fire {
     background-color: #fd7d24;
     color: white;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-fire) {
+    background: linear-gradient(to bottom, white 25%, #fd7d24bb);
+    /* background-color: #fd7d24bb; */
+}
+
 .background-color-flying {
     background: linear-gradient(to bottom, #3dc7ef 50%, #bdb9b8 50% 100%);
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-flying) {
+    background: linear-gradient(to bottom, #3dc7efbb, #bdb9b8bb 65%);
 }
 
 .background-color-water {
@@ -93,9 +108,17 @@ p {
     color: white;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-water) {
+    background: linear-gradient(to bottom, white 25%, #3dc7efbb);
+}
+
 .background-color-bug {
     background-color: #729f3f;
     color: white;
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-bug) {
+    background: linear-gradient(to bottom, white 25%, #729f3fbb);
 }
 
 .background-color-normal {
@@ -103,9 +126,17 @@ p {
     color: white;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-normal) {
+    background: linear-gradient(to bottom, white 25%, #a4acafbb);
+}
+
 .background-color-rock {
     background-color: #a38c21;
     color: white;
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-rock) {
+    background: linear-gradient(to bottom, white 25%, #a38c21bb);
 }
 
 .background-color-ground {
@@ -113,9 +144,17 @@ p {
     color: black;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-ground) {
+    background: linear-gradient(to bottom, #f7de3fbb 25%, #ab9842bb);
+}
+
 .background-color-psychic {
     background-color: #f366b9;
     color: white;
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-psychic) {
+    background: linear-gradient(to bottom, white 25%, #f366b9bb);
 }
 
 .background-color-electric {
@@ -123,9 +162,17 @@ p {
     color: white;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-electric) {
+    background: linear-gradient(to bottom, white 25%, #eed535bb);
+}
+
 .background-color-steel {
     background-color: #9eb7b8;
     color: white;
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-steel) {
+    background: linear-gradient(to bottom, white 25%, #9eb7b8bb);
 }
 
 .background-color-ice {
@@ -133,9 +180,17 @@ p {
     color: white;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-ice) {
+    background: linear-gradient(to bottom, white 25%, #51c4e7bb);
+}
+
 .background-color-ghost {
     background-color: #7b62a3;
     color: white;
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-ghost) {
+    background: linear-gradient(to bottom, white 25%, #7b62a3bb);
 }
 
 .background-color-fighting {
@@ -143,9 +198,17 @@ p {
     color: white;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-fighting) {
+    background: linear-gradient(to bottom, white 25%, #d56723bb);
+}
+
 .background-color-fairy {
     background-color: #fdb9e9;
     color: white;
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-fairy) {
+    background: linear-gradient(to bottom, white 25%, #fdb9e9bb);
 }
 
 .background-color-dragon {
@@ -153,9 +216,17 @@ p {
     color: black;
 }
 
+span.pokemonFlex:has(:first-of-type.background-color-dragon) {
+    background: linear-gradient(to bottom, #53a4cfbb 30%, #f16e57bb);
+}
+
 .background-color-dark {
     background: #707070;
     color: white;
+}
+
+span.pokemonFlex:has(:first-of-type.background-color-dark) {
+    background: linear-gradient(to bottom, white 25%, #707070bb);
 }
 
 .pokemonConsoles {
@@ -173,12 +244,9 @@ p {
 }
 
 @media screen and (max-height:400px) {
-    .pokemonFlex {
-        min-width: 173px;
-    }
-
     .pokemonImage {
-        max-width: 8rem;
+        /* max-width: 8rem; */
+        max-width: 2rem;
     }
 
     .pokemonName {
@@ -191,7 +259,7 @@ p {
 
     .pokemonType {
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         justify-content: center;
     }
 
@@ -200,6 +268,6 @@ p {
     }
 
     .pokemonConsoleImage {
-        max-width: 1.5rem;
+        max-width: 1.2rem;
     }
 }
