@@ -145,7 +145,7 @@ span.pokemonFlex:has(:first-of-type.background-color-rock) {
 }
 
 span.pokemonFlex:has(:first-of-type.background-color-ground) {
-    background: linear-gradient(to bottom, #f7de3fbb 25%, #ab9842bb);
+    background: linear-gradient(to bottom, #f7de3fbb 25%, #ab9842);
 }
 
 .background-color-psychic {
@@ -240,7 +240,7 @@ span.pokemonFlex:has(:first-of-type.background-color-dark) {
 
 
 .pokemonConsoleImage {
-    max-width: 1.5rem;
+    max-width: 2rem;
 }
 
 @media screen and (max-height:415px) {
