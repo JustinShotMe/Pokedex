@@ -44,11 +44,87 @@
             </ul>
         </div>
     </nav>
-
-    <div class="pokemonList" id="pokemonList"> </div>
-
+    <div class="outterContainer" id="outterContainer">
+        <div class="button-group filter-button-group" id="buttonGroup">
+            <h3 id="filterTitles">Types</h3>
+            <button id="button" data-filter="*" class="showAll" onclick=filterType(event)>Show All</button>
+            <button id="button" class="background-color-grass" data-filter="grass"
+                onclick=filterType(event)>Grass</button>
+            <button id="button" class="background-color-fire" data-filter="fire" onclick=filterType(event)>Fire</button>
+            <button id="button" class="background-color-water" data-filter="water"
+                onclick=filterType(event)>Water</button>
+            <button id="button" class="background-color-poison" data-filter="poison"
+                onclick=filterType(event)>Poison</button>
+            <button id="button" class="background-color-bug" data-filter="bug" onclick=filterType(event)>Bug</button>
+            <button id="button" class="background-color-flying" data-filter="flying"
+                onclick=filterType(event)>Flying</button>
+            <button id="button" class="background-color-normal" data-filter="normal"
+                onclick=filterType(event)>Normal</button>
+            <button id="button" class="background-color-rock" data-filter="rock" onclick=filterType(event)>Rock</button>
+            <button id="button" class="background-color-ground" data-filter="ground"
+                onclick=filterType(event)>Ground</button>
+            <button id="button" class="background-color-psychic" data-filter="psychic"
+                onclick=filterType(event)>Psychic</button>
+            <button id="button" class="background-color-electric" data-filter="electric"
+                onclick=filterType(event)>Electric</button>
+            <button id="button" class="background-color-ice" data-filter="ice" onclick=filterType(event)>Ice</button>
+            <button id="button" class="background-color-ghost" data-filter="ghost"
+                onclick=filterType(event)>Ghost</button>
+            <button id="button" class="background-color-fighting" data-filter="fighting"
+                onclick=filterType(event)>Fighting</button>
+            <button id="button" class="background-color-fairy" data-filter="fairy"
+                onclick=filterType(event)>Fairy</button>
+            <button id="button" class="background-color-dragon" data-filter="dragon"
+                onclick=filterType(event)>Dragon</button>
+            <button id="button" class="background-color-dark" data-filter="dark" onclick=filterType(event)>Dark</button>
+            <h3 id="filterTitles">Generations</h3>
+            <button id="button" class="showAll" data-filter="*" onclick=filterGeneration(event)>Show All</button>
+            <button id="button" class="background-color-dark" data-filter="genOne"
+                onclick=filterGeneration(event)>I</button>
+            <button id="button" class="background-color-dark" data-filter="genTwo"
+                onclick=filterGeneration(event)>II</button>
+            <button id="button" class="background-color-dark" data-filter="genThree"
+                onclick=filterGeneration(event)>III</button>
+            <button id="button" class="background-color-dark" data-filter="genFour"
+                onclick=filterGeneration(event)>IV</button>
+            <button id="button" class="background-color-dark" data-filter="genFive"
+                onclick=filterGeneration(event)>V</button>
+            <button id="button" class="background-color-dark" data-filter="genSix"
+                onclick=filterGeneration(event)>VI</button>
+            <button id="button" class="background-color-dark" data-filter="genSeven"
+                onclick=filterGeneration(event)>VII</button>
+            <button id="button" class="background-color-dark" data-filter="genEight"
+                onclick=filterGeneration(event)>VII</button>
+            <h3 id="filterTitles">Consoles</h3>
+            <button id="button" class="showAll" data-filter="*" onclick=filterGeneration(event)>Show All</button>
+            <input type="image" class="consoleIconImage"
+                src="https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gb.png"
+                data-filter="genOne" onclick=filterGeneration(event) />
+            <input type="image" class="consoleIconImage"
+                src="https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gbc9.png"
+                data-filter="genTwo" onclick=filterGeneration(event) />
+            <input type="image" class="consoleIconImage"
+                src="https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GBA/Gameboy%20Sp4.png"
+                data-filter="genThree" onclick=filterGeneration(event) />
+            <input type="image" class="consoleIconImage"
+                src="https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/NDS/NDS2.png"
+                data-filter="consoleDS" onclick=filterGeneration(event) />
+            <input type="image" class="consoleIconImage"
+                src="https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png"
+                data-filter="console3DS" onclick=filterGeneration(event) />
+            <input type="image" class="consoleIconImage"
+                src="https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png"
+                data-filter="consoleSwitch" onclick=filterGeneration(event) />
+            <h3 id="filterTitles">Special</h3>
+            <button id="button" class="showAll" data-filter="*" onclick=filterGeneration(event)>Show All</button>
+            <button id="button" class="background-color-poison" data-filter="legendary"
+                onclick=filterLegendary(event)>Legendary</button>
+            <button id="button" class="background-color-poison" data-filter="mythical"
+                onclick=filterMythical(event)>Mythical</button>
+        </div>
+        <div class="pokemonList" id="pokemonList"> </div>
+    </div>
     <script src="app.js"></script>
-    <!-- https://github.com/Tatohead/Console-Iconset/tree/main/Console/Nintendo/GBA -->
     <script>loopPokemon(1, 905)</script>
 </body>
 

@@ -143,27 +143,45 @@ function loopPokemon(z, y) {
                 switch (true) {
                     case (pokeData.id <= 151): // apply gameboy OG icon to gen 1 pokemon
                         consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gb.png')
+                        consoleImage.classList.add('genOne')
                         break;
                     case ((pokeData.id >= 152) && (pokeData.id <= 251)): // apply gameboy color icon to gen 2 pokemon
                         consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GB/gbc9.png')
+                        consoleImage.classList.add('genTwo')
                         break;
                     case ((pokeData.id >= 252) && (pokeData.id <= 386)): // apply gameboy advance icon to gen 3 pokemon
                         consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/GBA/Gameboy%20Sp4.png')
+                        consoleImage.classList.add('genThree')
                         break;
-                    case ((pokeData.id >= 387) && (pokeData.id <= 649)): // apply nintendo DS icon to gen 4 and 5pokemon
+                    case ((pokeData.id >= 387) && (pokeData.id <= 493)): // apply nintendo DS icon to gen 4 pokemon
                         consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/NDS/NDS2.png')
+                        consoleImage.classList.add('genFour')
+                        consoleImage.classList.add('consoleDS')
+                        break;
+                    case ((pokeData.id >= 494) && (pokeData.id <= 649)): // apply nintendo DS icon to gen 5 pokemon
+                        consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/NDS/NDS2.png')
+                        consoleImage.classList.add('genFive')
+                        consoleImage.classList.add('consoleDS')
                         break;
                     case ((pokeData.id >= 650) && (pokeData.id <= 721)): // apply 3DS icon to gen 6 pokemon
                         consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png')
+                        consoleImage.classList.add('genSix')
+                        consoleImage.classList.add('console3DS')
                         break;
                     case ((pokeData.id >= 722) && (pokeData.id <= 809)): // apply 3DS & switch icon to gen 7 pokemon
                         consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/3DS/3DS.png')
+                        consoleImage.classList.add('genSeven')
+                        consoleImage.classList.add('console3DS')
+                        consoleImage.classList.add('consoleSwitch')
                         var consoleImage2 = document.createElement('img')
                         consoleImage2.setAttribute('class', 'pokemonConsoleImage')
                         consoleImage2.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png')
+                        consoleImage2.classList.add('genSeven')
                         break;
                     case ((pokeData.id >= 810) && (pokeData.id <= 905)): // apply switch icon to gen 8 pokemon
                         consoleImage.setAttribute('src', 'https://raw.githubusercontent.com/Tatohead/Console-Iconset/main/Console/Nintendo/Switch/Switch.png')
+                        consoleImage.classList.add('genEight')
+                        consoleImage.classList.add('consoleSwitch')
                         break;
                 }
                 // append the console icon to the pokemonConsoles span
@@ -175,4 +193,77 @@ function loopPokemon(z, y) {
             })
     }
 
+}
+
+function filterType(e) {
+    const pokemons = document.querySelectorAll(".pokemonFlex");
+    let filter = e.target.dataset.filter;
+
+    if (filter === '*') {
+        pokemons.forEach(pokemon => pokemon.classList.remove('hidden'));
+    } else {
+        pokemons.forEach(pokemon => {
+            // if second type exists & it is the same as the filter, remove hidden class
+            if ((pokemon.children[3].children[1]) && (pokemon.children[3].children[1].innerHTML == filter)) {
+                pokemon.classList.remove('hidden')
+            } else if (pokemon.children[3].children[0].innerHTML == filter) {
+                pokemon.classList.remove('hidden')
+                // else add hidden class
+            } else { pokemon.classList.add('hidden') }
+        });
+    };
+}
+function filterGeneration(e) {
+    const pokemons = document.querySelectorAll(".pokemonFlex");
+    let filter = e.target.dataset.filter;
+
+    if (filter === '*') {
+        pokemons.forEach(pokemon => pokemon.classList.remove('hidden'));
+    } else {
+        pokemons.forEach(pokemon => {
+            // if second type exists & it is the same as the filter, remove hidden class
+            if (pokemon.children[4].children[0].classList.contains(filter)) {
+                pokemon.classList.remove('hidden')
+                // else add hidden class
+            } else { pokemon.classList.add('hidden') }
+        });
+    };
+}
+
+const legendary = [144, 145, 146, 150, 243, 244, 245, 250, 249, 377, 378, 379, 381, 380, 382, 383, 384, 480, 481, 482, 483, 484, 485, 486, 487, 488, 638, 639, 640, 641, 642, 643, 644, 645, 646, 716, 717, 718, 772, 773, 785, 786, 787, 788, 790, 791, 792, 800, 793, 888, 889, 890, 891, 892, 896, 898, 894, 895, 905]
+function filterLegendary(e) {
+    const pokemons = document.querySelectorAll(".pokemonFlex");
+    let filter = e.target.dataset.filter;
+
+    if (filter === '*') {
+        pokemons.forEach(pokemon => pokemon.classList.remove('hidden'));
+    } else {
+        pokemons.forEach(pokemon => {
+            let stringPokeID = Number(pokemon.children[1].innerHTML)
+            // if second type exists & it is the same as the filter, remove hidden class
+            if (legendary.includes(stringPokeID)) {
+                pokemon.classList.remove('hidden')
+                // else add hidden class
+            } else { pokemon.classList.add('hidden') }
+        });
+    };
+}
+
+const mythical = [151, 251, 385, 386, 490, 489, 491, 492, 493, 494, 647, 648, 649, 719, 720, 721, 801, 802, 807, 808, 809, 893]
+function filterMythical(e) {
+    const pokemons = document.querySelectorAll(".pokemonFlex");
+    let filter = e.target.dataset.filter;
+
+    if (filter === '*') {
+        pokemons.forEach(pokemon => pokemon.classList.remove('hidden'));
+    } else {
+        pokemons.forEach(pokemon => {
+            let stringPokeID = Number(pokemon.children[1].innerHTML)
+            // if second type exists & it is the same as the filter, remove hidden class
+            if (mythical.includes(stringPokeID)) {
+                pokemon.classList.remove('hidden')
+                // else add hidden class
+            } else { pokemon.classList.add('hidden') }
+        });
+    };
 }
