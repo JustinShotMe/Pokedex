@@ -46,6 +46,8 @@
     </nav>
     <div class="outterContainer" id="outterContainer">
         <div class="button-group filter-button-group" id="buttonGroup">
+            <button id="button" class="sortPokeID" onclick=sortingbyPokeNumber()>Sort Forward</button>
+            <button id="button" class="sortPokeID" onclick=sortingbyPokeNumberBackward()>Sort Backward</button>
             <h3 id="filterTitles">Types</h3>
             <button id="button" data-filter="*" class="showAll" onclick=filterType(event)>Show All</button>
             <button id="button" class="background-color-grass" data-filter="grass"

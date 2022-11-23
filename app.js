@@ -267,3 +267,47 @@ function filterMythical(e) {
         });
     };
 }
+
+var sortByPokemonNumber = document.getElementsByClassName('sortPokeID');
+function sortingbyPokeNumber() {
+    var items = document.querySelectorAll(".pokemonFlex");
+    // console.log(items.forEach(element => console.log(element)))
+    // items.forEach(element =>
+    //     console.log(element.children[1].innerHTML)
+
+    // get all items as an array and call the sort method
+    Array.from(items).sort(function (a, b) {
+        // get the text content
+        a = a.querySelector('.pokemonNumber').innerHTML
+        console.log(a)
+        b = b.querySelector('.pokemonNumber').innerHTML
+        console.log(b)
+        return (a > b) - (a < b)
+    }).forEach(function (n, i) {
+        n.style.order = i
+    })
+    // )
+}
+sortByPokemonNumber.addEventListener('click', sortingbyPokeNumber);
+
+var sortByPokemonNumber = document.getElementsByClassName('sortPokeID');
+function sortingbyPokeNumberBackward() {
+    var items = document.querySelectorAll(".pokemonFlex");
+    // console.log(items.forEach(element => console.log(element)))
+    // items.forEach(element =>
+    //     console.log(element.children[1].innerHTML)
+
+    // get all items as an array and call the sort method
+    Array.from(items).sort(function (a, b) {
+        // get the text content
+        a = a.querySelector('.pokemonNumber').innerHTML
+        console.log(a)
+        b = b.querySelector('.pokemonNumber').innerHTML
+        console.log(b)
+        return (a < b) - (a > b)
+    }).forEach(function (n, i) {
+        n.style.order = i
+    })
+    // )
+}
+sortByPokemonNumber.addEventListener('click', sortingbyPokeNumberBackward);
