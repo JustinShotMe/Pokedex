@@ -253,8 +253,8 @@ function sortingbyPokeNumberBackward() {
 }
 // sortByPokemonNumber2.addEventListener('click', sortingbyPokeNumberBackward);
 
-window.onload = function () {
+setTimeout(function () {
     sortingbyPokeNumberBackward();
     sortingbyPokeNumber();
-    console.log('done')
-}
+    console.log('waited a bit')
+}, 4000);
