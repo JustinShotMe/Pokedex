@@ -261,4 +261,7 @@ function sortingbyPokeNumberBackward() {
 }
 sortByPokemonNumber2.addEventListener('click', sortingbyPokeNumberBackward);
 
-window.onload = sortByPokemonNumber;
+window.addEventListener("load", (event) => {
+    sortByPokemonNumber;
+    console.log('done')
+});
