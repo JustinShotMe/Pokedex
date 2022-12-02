@@ -1,26 +1,5 @@
 // https://github.com/Tatohead/Console-Iconset/tree/main/Console
 
-var sortByPokemonNumber = document.getElementsByClassName('sortPokeID');
-function sortingbyPokeNumber() {
-    var items = document.querySelectorAll(".pokemonFlex");
-    console.log('Ran the sort script')
-    // console.log(items.forEach(element => console.log(element)))
-    // items.forEach(element =>
-    //     console.log(element.children[1].innerHTML)
-
-    // get all items as an array and call the sort method
-    Array.from(items).sort(function (a, b) {
-        // get the text content
-        a = a.querySelector('.pokemonNumber').innerHTML
-        b = b.querySelector('.pokemonNumber').innerHTML
-        return (a > b) - (a < b)
-    }).forEach(function (n, i) {
-        n.style.order = i
-    })
-    // )
-}
-sortByPokemonNumber.addEventListener('click', sortingbyPokeNumber);
-
 function loopPokemon(z, y) {
     for (let x = z; x <= y; x++) {
 
@@ -163,7 +142,6 @@ function loopPokemon(z, y) {
                 pokeSpan.appendChild(pokemonConsoles)
             })
     }
-    sortingbyPokeNumber()
 
 }
 
@@ -240,26 +218,26 @@ function filterMythical(e) {
     };
 }
 
-// var sortByPokemonNumber = document.getElementsByClassName('sortPokeID');
-// function sortingbyPokeNumber() {
-//     var items = document.querySelectorAll(".pokemonFlex");
-//     console.log('Ran the sort script')
-//     // console.log(items.forEach(element => console.log(element)))
-//     // items.forEach(element =>
-//     //     console.log(element.children[1].innerHTML)
+var sortByPokemonNumber = document.getElementsByClassName('sortPokeID');
+function sortingbyPokeNumber() {
+    var items = document.querySelectorAll(".pokemonFlex");
+    console.log('Ran the sort script')
+    // console.log(items.forEach(element => console.log(element)))
+    // items.forEach(element =>
+    //     console.log(element.children[1].innerHTML)
 
-//     // get all items as an array and call the sort method
-//     Array.from(items).sort(function (a, b) {
-//         // get the text content
-//         a = a.querySelector('.pokemonNumber').innerHTML
-//         b = b.querySelector('.pokemonNumber').innerHTML
-//         return (a > b) - (a < b)
-//     }).forEach(function (n, i) {
-//         n.style.order = i
-//     })
-//     // )
-// }
-// sortByPokemonNumber.addEventListener('click', sortingbyPokeNumber);
+    // get all items as an array and call the sort method
+    Array.from(items).sort(function (a, b) {
+        // get the text content
+        a = a.querySelector('.pokemonNumber').innerHTML
+        b = b.querySelector('.pokemonNumber').innerHTML
+        return (a > b) - (a < b)
+    }).forEach(function (n, i) {
+        n.style.order = i
+    })
+    // )
+}
+sortByPokemonNumber.addEventListener('click', sortingbyPokeNumber);
 
 var sortByPokemonNumber2 = document.getElementsByClassName('sortPokeID');
 function sortingbyPokeNumberBackward() {
@@ -282,3 +260,5 @@ function sortingbyPokeNumberBackward() {
     // )
 }
 sortByPokemonNumber2.addEventListener('click', sortingbyPokeNumberBackward);
+
+window.onload = sortByPokemonNumber;
