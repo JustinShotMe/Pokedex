@@ -222,10 +222,6 @@ var sortByPokemonNumber = document.getElementsByClassName('sortPokeID');
 function sortingbyPokeNumber() {
     var items = document.querySelectorAll(".pokemonFlex");
     console.log('Ran the sort script')
-    // console.log(items.forEach(element => console.log(element)))
-    // items.forEach(element =>
-    //     console.log(element.children[1].innerHTML)
-
     // get all items as an array and call the sort method
     Array.from(items).sort(function (a, b) {
         // get the text content
@@ -237,31 +233,22 @@ function sortingbyPokeNumber() {
     })
     // )
 }
-sortByPokemonNumber.addEventListener('click', sortingbyPokeNumber);
+// sortByPokemonNumber.addEventListener('click', sortingbyPokeNumber);
 
 var sortByPokemonNumber2 = document.getElementsByClassName('sortPokeID');
 function sortingbyPokeNumberBackward() {
     var items = document.querySelectorAll(".pokemonFlex");
-    // console.log(items.forEach(element => console.log(element)))
-    // items.forEach(element =>
-    //     console.log(element.children[1].innerHTML)
-
     // get all items as an array and call the sort method
     Array.from(items).sort(function (a, b) {
         // get the text content
         a = a.querySelector('.pokemonNumber').innerHTML
-        console.log(a)
+        // console.log(a)
         b = b.querySelector('.pokemonNumber').innerHTML
-        console.log(b)
+        // console.log(b)
         return (a < b) - (a > b)
     }).forEach(function (n, i) {
         n.style.order = i
     })
     // )
 }
-sortByPokemonNumber2.addEventListener('click', sortingbyPokeNumberBackward);
-
-window.addEventListener("load", (event) => {
-    sortByPokemonNumber;
-    console.log('done')
-});
+// sortByPokemonNumber2.addEventListener('click', sortingbyPokeNumberBackward);
