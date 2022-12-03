@@ -90,7 +90,6 @@ h3:not(:first-of-type) {
 .pokemonImage {
     width: 12rem;
     filter: drop-shadow(5px 7px 4px #686868);
-    /* filter: drop-shadow(2px 3px 2px #fff) drop-shadow(4px 6px 4px #686868); */
 }
 
 .pokemonNumber {
@@ -145,8 +144,7 @@ span.pokemonFlex:has(:first-of-type.background-color-poison) {
 }
 
 span.pokemonFlex:has(:first-of-type.background-color-fire) {
-    background: linear-gradient(to bottom, white 25%, #fd7d24bb);
-    /* background-color: #fd7d24bb; */
+    background: linear-gradient(to bottom, white 25%, #fd7d24bb)
 }
 
 .background-color-flying {
@@ -300,10 +298,20 @@ span.pokemonFlex:has(:first-of-type.background-color-dark) {
 @media screen and (max-width:391px) {
     #filterTitles {
         font-size: 1rem;
+        margin-top: 1rem;
     }
 
     #button {
         font-size: 0.9rem;
+    }
+
+    #button.sortPokeID {
+        white-space: normal;
+        padding-bottom: 3rem;
+    }
+
+    #button.sortPokeID:first-of-type {
+        margin-bottom: 0.8rem;
     }
 
     #button.showAll {
@@ -317,6 +325,10 @@ span.pokemonFlex:has(:first-of-type.background-color-dark) {
 }
 
 @media screen and (max-height:415px) {
+    .pokemonList {
+        margin-left: 0.7rem;
+    }
+
     .consoleIconImage {
         margin-bottom: 10px;
         margin-right: 2px;
@@ -324,16 +336,22 @@ span.pokemonFlex:has(:first-of-type.background-color-dark) {
 
     #filterTitles {
         font-size: 1.25rem;
+        margin-top: 1rem;
     }
 
     #button {
         font-size: 0.9rem;
-        min-width: 3.5rem;
+        min-width: 6.8rem;
+    }
+
+    .filter-button-group {
+        margin-left: 1rem;
     }
 
     .pokemonFlex {
-        min-width: 176px;
-        /* min-height: 300px; */
+        margin-left: 0.1rem;
+        min-width: 164px;
+        max-width: 10rem;
     }
 
     .pokemonImage {
@@ -356,6 +374,7 @@ span.pokemonFlex:has(:first-of-type.background-color-dark) {
 
     .pill {
         font-size: .75rem;
+        padding: 0.2rem 0.7rem;
     }
 
     .pokemonConsoleImage {
